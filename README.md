@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Întrebare de V-Day</title>
+    <title>Întrebare pentru mama</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,18 +12,6 @@
         }
         h2 {
             font-size: 24px;
-        }
-
-        /* Inimă animată */
-        .heart {
-            color: red;
-            font-size: 50px;
-            animation: beat 0.6s infinite alternate;
-        }
-
-        @keyframes beat {
-            from { transform: scale(1); }
-            to { transform: scale(1.3); }
         }
 
         /* Butoane */
@@ -49,11 +37,8 @@
 </head>
 <body>
 
-    <!-- Inimă animată -->
-    <div class="heart">❤️</div>
-
     <!-- Întrebarea -->
-    <h2>Vrei să fii partenera mea de V-day?</h2>
+    <h2>Draga mea mamă, îmi iei BMW la 18 ani?</h2>
     
     <!-- Butoane -->
     <button id="yesBtn" class="btn" onclick="accept()">Da</button>
@@ -63,7 +48,7 @@
         let yesSize = 20; // Dimensiunea inițială a butonului "Da"
 
         function accept() {
-            alert("Yay! Ne vedem de V-day! ❤️");
+            alert("Mulțumesc, mami! 🥰🚗💨");
         }
 
         function increaseYes() {
