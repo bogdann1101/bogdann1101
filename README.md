@@ -1,62 +1,40 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Întrebare pentru mama</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
-        h2 {
-            font-size: 24px;
-        }
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-        /* Butoane */
-        .btn {
-            font-size: 20px;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+export default function App() {
+  const [size, setSize] = useState(1);
 
-        #yesBtn {
-            background-color: green;
-            color: white;
-        }
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <motion.h1
+        className="text-3xl font-bold mb-6"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ repeat: Infinity, duration: 1.5 }}
+      >
+        Îmi puneți un 10?
+      </motion.h1>
+      <motion.div
+        className="text-green-500 text-6xl font-bold mb-6"
+        animate={{ scale: [1, 1.5, 1] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+      >
+        10
+      </motion.div>
+      <div className="flex gap-4">
+        <motion.button
+          className="bg-green-500 text-white px-6 py-3 rounded-lg text-xl"
+          style={{ transform: `scale(${size})` }}
+        >
+          Da
+        </motion.button>
+        <button
+          className="bg-red-500 text-white px-6 py-3 rounded-lg text-xl"
+          onClick={() => setSize(size * 1.3)}
+        >
+          Nu
+        </button>
+      </div>
+    </div>
+  );
+}
 
-        #noBtn {
-            background-color: red;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Întrebarea -->
-    <h2>Draga mea mamă, îmi iei BMW la 18 ani?</h2>
-    
-    <!-- Butoane -->
-    <button id="yesBtn" class="btn" onclick="accept()">Da</button>
-    <button id="noBtn" class="btn" onclick="increaseYes()">Nu</button>
-
-    <script>
-        let yesSize = 20; // Dimensiunea inițială a butonului "Da"
-
-        function accept() {
-            alert("Mulțumesc, mami! 🥰🚗💨");
-        }
-
-        function increaseYes() {
-            yesSize += 10; // Creștem dimensiunea butonului "Da"
-            document.getElementById("yesBtn").style.fontSize = yesSize + "px";
-            document.getElementById("yesBtn").style.padding = (yesSize / 2) + "px " + (yesSize) + "px";
-        }
-    </script>
-
-</body>
-</html>
